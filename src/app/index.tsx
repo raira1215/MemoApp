@@ -10,36 +10,35 @@ const Index = (): JSX.Element => {
         </View>
       </View>
       <View>
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2023年12月5日 10:00</Text>
+            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2023年12月5日 10:00</Text>
           </View>
           <View>
-            <Text>X</Text>
-          </View>
-        </View>
-
-        <View>
-          <View>
-            <Text>買い物リスト</Text>
-            <Text>2023年12月5日 10:00</Text>
-          </View>
-          <View>
-            <Text>X</Text>
+            <Text style={styles.delete}>X</Text>
           </View>
         </View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2023年12月5日 10:00</Text>
+            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2023年12月5日 10:00</Text>
           </View>
           <View>
-            <Text>X</Text>
+            <Text style={styles.delete}>X</Text>
           </View>
         </View>
 
+        <View style={styles.memoListItem}>
+          <View>
+            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2023年12月5日 10:00</Text>
+          </View>
+          <View>
+            <Text style={styles.delete}>X</Text>
+          </View>
+        </View>
       </View>
       <View>
         <Text>+</Text>
@@ -72,6 +71,29 @@ const styles = StyleSheet.create({
     fontSize: 32,
     lineHeight: 32,
     color: '#ffffff'
+  },
+  memoListItem: {
+    backgroundColor: '#ffffff',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBlockColor: 'rgba(0,0,0,0.15)'
+  },
+  memoListItemTitle: {
+    fontSize: 20,
+    lineHeight: 32
+  },
+  memoListItemDate: {
+    fontSize: 14,
+    lineHeight: 16,
+    color: '#9A9A9A'
+  },
+  delete: {
+    fontSize: 28,
+    color: '#BEBEBE'
   }
 })
 
