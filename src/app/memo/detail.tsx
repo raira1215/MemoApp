@@ -2,6 +2,7 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native'
 
 import Header from '../../components/Header'
 import CircleButton from '../../components/CircleButton'
+import Icon from '../../components/icon'
 
 const Detail = (): JSX.Element => {
   return (
@@ -14,13 +15,15 @@ const Detail = (): JSX.Element => {
       <View>
         <ScrollView style={styles.memoBody}>
           <Text style={styles.memoBodyText} >買い物リスト
-          今日はカレーを作ろうと思っています！！
-          買うものは、牛肉と玉ねぎと人参とカレー粉とじゃがいもです。
+            今日はカレーを作ろうと思っています！！
+            買うものは、牛肉と玉ねぎと人参とカレー粉とじゃがいもです。
           </Text>
         </ScrollView>
       </View>
 
-      <CircleButton style={{ top: 145, bottom: 'auto' }}>+</CircleButton>
+      <CircleButton style={{ top: 145, bottom: 'auto' }}>
+        <Icon name='pencil' size={40} color='#ffffff' />
+      </CircleButton>
     </View>
   )
 }
