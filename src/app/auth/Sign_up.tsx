@@ -1,7 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
+import {
+  View, Text, TextInput,
+  StyleSheet, TouchableOpacity, Alert
+} from 'react-native'
 
 import Header from '../../components/Header'
-import { TextInput } from 'react-native-gesture-handler'
+import Button from '../../components/Button'
 
 const Signup = (): JSX.Element => {
   return (
@@ -11,12 +14,12 @@ const Signup = (): JSX.Element => {
         <Text style={styles.title}>Sign Up</Text>
         <TextInput style={styles.input} value='Email address' />
         <TextInput style={styles.input} value='Password' />
-        <View style={styles.button}>
-          <Text style={styles.buttonLabel}>Submit</Text>
-        </View>
+        <Button label='Submit' onPress={() => { Alert.alert('Pressed!') }}/>
         <View style={styles.footer} >
           <Text style={styles.footerText}>Already registered?</Text>
-          <Text style={styles.footerLink}>Log In.</Text>
+          <TouchableOpacity>
+            <Text style={styles.footerLink}>Log In.</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -45,21 +48,6 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     color: '#D9D9D9',
     marginBottom: 20
-  },
-  button: {
-    borderWidth: 1,
-    borderColor: '#9E9E9E',
-    alignSelf: 'flex-start',
-    backgroundColor: '#FAA500',
-    paddingHorizontal: 28,
-    paddingVertical: 14,
-    borderRadius: 5,
-    marginBottom: 20
-  },
-  buttonLabel: {
-    color: '#ffffff',
-    lineHeight: 24,
-    fontSize: 16
   },
   footer: {
     flexDirection: 'row'

@@ -1,7 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
+import {
+  View, Text, TextInput, TouchableOpacity,
+  StyleSheet, Alert
+} from 'react-native'
 
 import Header from '../../components/Header'
-import { TextInput } from 'react-native-gesture-handler'
+import Button from '../../components/Button'
 
 const LogIn = (): JSX.Element => {
   return (
@@ -11,12 +14,12 @@ const LogIn = (): JSX.Element => {
         <Text style={styles.title}>Log In</Text>
         <TextInput style={styles.input} value='Email address' />
         <TextInput style={styles.input} value='Password' />
-      <View style={styles.button}>
-        <Text style={styles.buttonLabel}>Submit</Text>
-      </View>
+        <Button label='Submit' onPress={() => { Alert.alert('Pressed!') }} />
       <View style={styles.footer} >
-        <Text style={styles.footerText}>Not registered?</Text>
-        <Text style={styles.footerLink}>Sign up here!</Text>
+          <Text style={styles.footerText}>Not registered?</Text>
+          <TouchableOpacity>
+            <Text style={styles.footerLink}>Sign up here!</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
