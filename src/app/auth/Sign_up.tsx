@@ -1,11 +1,17 @@
 import {
   View, Text, TextInput,
-  StyleSheet, TouchableOpacity, Alert
+  StyleSheet, TouchableOpacity
 } from 'react-native'
 
 import Header from '../../components/Header'
 import Button from '../../components/Button'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
+
+const handlePress = (): void => {
+  // 会員登録
+  router.push('/memo/list')
+}
+
 const Signup = (): JSX.Element => {
   return (
     <View style={styles.container}>
@@ -14,7 +20,7 @@ const Signup = (): JSX.Element => {
         <Text style={styles.title}>Sign Up</Text>
         <TextInput style={styles.input} value='Email address' />
         <TextInput style={styles.input} value='Password' />
-        <Button label='Submit' onPress={() => { Alert.alert('送信しました！！') }}/>
+        <Button label='Submit' onPress={handlePress}/>
         <View style={styles.footer} >
           <Text style={styles.footerText}>Already registered?</Text>
           <Link href='/auth/log_in' asChild >
