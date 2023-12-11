@@ -8,7 +8,7 @@ import { Link, router } from 'expo-router'
 
 const handlePress = (): void => {
   // 会員登録
-  router.push('/memo/list')
+  router.replace('/memo/list')
 }
 
 const Signup = (): JSX.Element => {
