@@ -1,13 +1,14 @@
 import {
   View, TextInput, StyleSheet
 } from 'react-native'
-import CircleButton from '../../components/CircleButton'
-import Icon from '../../components/icon'
+import { router } from 'expo-router'
 import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { useState } from 'react'
+
 import KeyboardAvoidingView from '../../components/KeyboardAvoidingView'
+import CircleButton from '../../components/CircleButton'
+import Icon from '../../components/icon'
 import { db, auth } from '../../config'
-import { router } from 'expo-router'
 
 const handlePress = (bodyText: string): void => {
   if (auth.currentUser === null) { return }
@@ -17,7 +18,7 @@ const handlePress = (bodyText: string): void => {
     updatedAt: Timestamp.fromDate(new Date())
   })
     .then((docRef) => {
-      console.log('succese', docRef.id)
+      console.log('success', docRef.id)
       router.back()
     })
     .catch((error) => {
@@ -30,7 +31,8 @@ const Create = (): JSX.Element => {
   return (
     <KeyboardAvoidingView style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput multiline
+        <TextInput
+          multiline
           style={styles.input}
           value={bodyText}
           onChangeText={(text) => { setBodyText(text) }}
