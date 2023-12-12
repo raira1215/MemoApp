@@ -20,7 +20,7 @@ const handlePress = (id: string): void => {
       style: 'destructive',
       onPress: () => {
         deleteDoc(ref)
-          .catch(() => { Alert.alert('削除に失敗しました')})
+          .catch(() => { Alert.alert('削除に失敗しました') })
       }
 
     }
